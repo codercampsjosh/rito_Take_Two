@@ -29,6 +29,7 @@ namespace Rito_Take_2.Services
         public async Task<string> GetChampDetailed(int id)
         {
             var info = await _httpClient.GetStreamAsync("/api/lol/static-data/na/v1.2/champion/" + id + "?api_key=" +_apiKey);
+            //  
             string result = new StreamReader(info).ReadToEnd();
             return result;
         }
